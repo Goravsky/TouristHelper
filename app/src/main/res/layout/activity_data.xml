@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DataActivity">
+    tools:context=".ui.DataActivity">
 
     <TextView
         android:id="@+id/result_view"
@@ -15,7 +15,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="1dp"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/gettext_button2"
+        app:layout_constraintBottom_toTopOf="@+id/gettext_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_url_view" />
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/gettext_button2"
+        android:id="@+id/gettext_button"
         android:layout_width="260dp"
         android:layout_height="40dp"
         android:layout_marginBottom="2dp"

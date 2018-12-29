@@ -1,38 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <SurfaceView
-        android:id="@+id/cam_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
-        android:id="@+id/result_layout"
+        android:id="@+id/result_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/cam_view"
-        app:layout_constraintStart_toStartOf="@+id/cam_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/qr_content"
-            android:layout_width="match_parent"
+            android:layout_width="336dp"
             android:layout_height="wrap_content"
             android:background="@android:color/background_light"
             android:gravity="center"
@@ -44,8 +30,8 @@
 
         <LinearLayout
             style="@android:style/ButtonBar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -57,16 +43,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/get_qr_result_button"
-                style="@android:style/ButtonBar"
-                android:layout_width="130dp"
-                android:layout_height="55dp"
-                android:layout_weight="1"
-                android:text="Get text"
-                tools:layout_editor_absoluteX="48dp"
-                tools:layout_editor_absoluteY="282dp" />
-
-            <Button
                 android:id="@+id/open_in_browser_button"
                 style="@android:style/ButtonBar"
                 android:layout_width="130dp"
@@ -75,19 +51,17 @@
                 android:text="Search in web"
                 tools:layout_editor_absoluteX="196dp"
                 tools:layout_editor_absoluteY="282dp" />
+
+            <Button
+                android:id="@+id/get_qr_result_button"
+                style="@android:style/ButtonBar"
+                android:layout_width="130dp"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:text="Get text"
+                tools:layout_editor_absoluteX="48dp"
+                tools:layout_editor_absoluteY="282dp" />
         </LinearLayout>
     </LinearLayout>
-
-    <ImageButton
-        android:id="@+id/history_button"
-        android:layout_width="54dp"
-        android:layout_height="53dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/cast_expanded_controller_ad_container_white_stripe_color"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_recent_history" />
 
 </android.support.constraint.ConstraintLayout>

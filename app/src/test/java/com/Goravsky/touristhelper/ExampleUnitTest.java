@@ -1,4 +1,4 @@
-package com.example.user.touristhelper;
+package com.Goravsky.touristhelper;
 
 import org.junit.Test;
 

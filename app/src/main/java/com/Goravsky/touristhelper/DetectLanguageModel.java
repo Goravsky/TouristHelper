@@ -1,4 +1,4 @@
-package com.example.user.touristhelper;
+package com.Goravsky.touristhelper;
 
 import com.google.gson.annotations.SerializedName;
 

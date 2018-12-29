@@ -1,10 +1,12 @@
-package com.example.user.touristhelper.ui;
+package com.Goravsky.touristhelper.ui;
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.SparseArray;
@@ -13,28 +15,36 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.user.touristhelper.QrTypeDecoder;
-import com.example.user.touristhelper.R;
+import com.Goravsky.touristhelper.QrTypeDecoder;
+import com.Goravsky.touristhelper.data.QrHistory;
+import com.Goravsky.touristhelper.R;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
+    private final int CAMERA_PERMISSION_CODE = 1;
 
     private SurfaceView cameraView;
     private LinearLayout resultLayout;
     private TextView resultText;
     private Button specialButton;
     private Button getTextButton;
+    private ImageButton historyButton;
     private CameraSource cameraSource;
     private Uri qrUri;
     private Intent specialIntent;
+    private String qrType = "Text";
+    private QrHistory qrHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,36 +55,33 @@ public class MainActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
 
-        cameraView = findViewById(R.id.cam_view);
-        resultLayout = findViewById(R.id.result_layout);
-        resultText = findViewById(R.id.qr_content);
-        specialButton = findViewById(R.id.open_in_browser_button);
-        getTextButton = findViewById(R.id.get_qr_result_button);
+        initComponents(); //инициализация компонентов
 
-        getTextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent getTextIntent = new Intent(MainActivity.this, DataActivity.class);
-                getTextIntent.putExtra("barcode", qrUri.toString());
-                startActivity(getTextIntent);
-            }
-        });
+        //Запрос на использование камеры
+        if (ContextCompat.checkSelfPermission(this.getApplicationContext(), Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_CODE);
+        } else {
+            createCameraSource(); //обращение к камере если разрешение было получено ранее
+        }
+    }
 
-        specialButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(specialIntent);
-            }
-        });
-
-        createCameraSource();
+    @Override
+    protected void onStart() {
+        super.onStart();
+        qrHistory.open();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
         resultLayout.setVisibility(View.GONE);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        qrHistory.close();
     }
 
     private void createCameraSource() {
@@ -118,9 +125,11 @@ public class MainActivity extends AppCompatActivity {
                             cameraSource.stop();
 
                             qrUri = Uri.parse(barcodes.valueAt(0).displayValue);
-                            System.out.println(qrUri);
                             QrTypeDecoder typeDecoder = new QrTypeDecoder(qrUri);
                             typeDecoder.decode();
+                            qrType = typeDecoder.getType();
+
+                            qrHistory.insert(qrType, new SimpleDateFormat("dd MMM").format(new Date()), qrUri.toString());
 
                             specialButton.setText(typeDecoder.getButtonName());
                             specialIntent = typeDecoder.getIntent();
@@ -129,6 +138,42 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                 }
+            }
+        });
+    }
+
+    private void initComponents(){
+        cameraView = findViewById(R.id.cam_view);
+        resultLayout = findViewById(R.id.result_layout);
+        resultText = findViewById(R.id.qr_content);
+        historyButton = findViewById(R.id.history_button);
+        specialButton = findViewById(R.id.open_in_browser_button);
+        getTextButton = findViewById(R.id.get_qr_result_button);
+        qrHistory = new QrHistory(MainActivity.this, null, 1);
+
+        historyButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent historyIntent = new Intent(MainActivity.this, HistoryActivity.class);
+                startActivity(historyIntent);
+            }
+        });
+        getTextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle getTextBundle = new Bundle();
+                getTextBundle.putString("qrType", qrType);
+                getTextBundle.putString("barcode", qrUri.toString());
+
+                Intent getTextIntent = new Intent(MainActivity.this, DataActivity.class);
+                getTextIntent.putExtra("content", getTextBundle);
+                startActivity(getTextIntent);
+            }
+        });
+        specialButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(specialIntent);
             }
         });
     }
@@ -161,5 +206,11 @@ public class MainActivity extends AppCompatActivity {
         }else{
             finish();
         }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        createCameraSource();
+        startCameraSourse();
     }
 }

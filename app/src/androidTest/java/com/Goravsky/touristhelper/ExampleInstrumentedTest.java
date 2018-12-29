@@ -1,4 +1,4 @@
-package com.example.user.touristhelper;
+package com.Goravsky.touristhelper;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

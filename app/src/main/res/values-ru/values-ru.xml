@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Помощник туриста</string>
+
+    <string name="get_text_button">Извлечь текст</string>
+    <string name="translate_button">Перевести</string>
+    <string name="simplify_button">Упростить</string>
+
+    <string name="geo_button">Открыть в картах</string>
+    <string name="link_button">Открыть в браузере</string>
+    <string name="tel_button">Позвонить по номеру</string>
+    <string name="text_button">Найти в интернете</string>
+    <string name="Scan_result">Scan result</string>
+</resources>

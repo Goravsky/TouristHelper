@@ -9,27 +9,26 @@
     <TextView
         android:id="@+id/result_view"
         android:layout_width="354dp"
-        android:layout_height="489dp"
+        android:layout_height="433dp"
         android:layout_marginBottom="14dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="8dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_url_view" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/main_url_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_width="229dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="2dp"
         android:gravity="center"
         android:text="URL"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Translate"
+            android:text= "@string/translate_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -71,11 +70,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Simplify"
+            android:text="@string/simplify_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
     </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="117dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:entries="@array/languagelist"
+        android:paddingLeft="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

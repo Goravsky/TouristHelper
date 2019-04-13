@@ -26,13 +26,25 @@ public class QrHistory extends SQLiteOpenHelper{
         super(context, DATABASE_NAME, factory, version);
     }
 
+    /*
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_NAME  +
-                 " ( " + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                " ( " + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_DATE + " TEXT, " +
                 COLUMN_TYPE + " TEXT, " +
-                COLUMN_CONTENT + " TEXT )");
+                COLUMN_CONTENT + " TEXT ) " );
+    }
+    */
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_NAME  +
+                " ( " + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_DATE + " TEXT, " +
+                COLUMN_TYPE + " TEXT, " +
+                COLUMN_CONTENT + " TEXT ) " );
+        db.setMaximumSize(50);
     }
 
     @Override

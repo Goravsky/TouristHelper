@@ -22,19 +22,12 @@ import java.util.ArrayList;
 
 public class HistoryActivity extends Activity {
 
-    private LinearLayout resultLayout;
-    private TableLayout tableLayout;
     private TextView defaultText;
     private ImageView[] imageViews;
     private TextView[] dateViews;
     private TextView[] contentViews;
     private QrHistory history;
-    private Button getTextButton;
-    private Button specialButton;
-    private TextView resultView;
-    private Intent specialIntent;
-    private String pickedContent;
-    private String qrType;
+    private ResultFragment result;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,13 +53,8 @@ public class HistoryActivity extends Activity {
     private void initComponents(){
         history = new QrHistory(HistoryActivity.this, null, 1);
 
-        resultLayout = findViewById(R.id.history_result_layout);
-        resultLayout.bringToFront();
-        tableLayout = findViewById(R.id.history_table_layout);
         defaultText = findViewById(R.id.default_text);
-        getTextButton = findViewById(R.id.history_get_result_button);
-        specialButton = findViewById(R.id.history_open_in_browser_button);
-        resultView = findViewById(R.id.history_result_view);
+        result = (ResultFragment) getFragmentManager().findFragmentById(R.id.history_result_fragment);
 
         imageViews = new ImageView[11];
         dateViews = new TextView[11];
@@ -108,67 +96,44 @@ public class HistoryActivity extends Activity {
         contentViews[9] = findViewById(R.id.content_field9);
         contentViews[10] = findViewById(R.id.content_field10);
 
-        for(int i = 0; i < 11; i++){
-            imageViews[i].setVisibility(View.INVISIBLE);
-            dateViews[i].setVisibility(View.INVISIBLE);
-            contentViews[i].setVisibility(View.INVISIBLE);
-        }
-
         for (int i = 0; i < 11; i++){
             contentViews[i].setOnClickListener(contentClickListener);
         }
-
-        getTextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bundle getTextBundle = new Bundle();
-                getTextBundle.putString("qrType", qrType);
-                getTextBundle.putString("barcode", pickedContent);
-
-                Intent getTextIntent = new Intent(HistoryActivity.this, DataActivity.class);
-                getTextIntent.putExtra("content", getTextBundle);
-                startActivity(getTextIntent);
-            }
-        });
-
-        specialButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(specialIntent);
-            }
-        });
     }
 
-    private void initData(){
+    private void initData() {
         ArrayList<QrRecord> records = history.getRecords();
 
-        int counter;
-        if(records.size() > 11){
-            counter = 11;
-        }else{
-            counter = records.size();
-        }
-
-        for(int i = 0; i < counter; i++){
+        if (records.size() > 0) {
             defaultText.setVisibility(View.INVISIBLE);
-            imageViews[i].setVisibility(View.VISIBLE);
-            dateViews[i].setVisibility(View.VISIBLE);
-            contentViews[i].setVisibility(View.VISIBLE);
 
-            QrRecord record = records.get(i);
-            imageViews[i].setImageResource(record.getTypeDrawable());
-            dateViews[i].setText(record.getDate());
-            contentViews[i].setText(record.getContent());
+            int counter;
+            if (records.size() > 11) {
+                counter = 11;
+            } else {
+                counter = records.size();
+            }
+
+            for (int i = 0; i < counter; i++) {
+                imageViews[i].setVisibility(View.VISIBLE);
+                dateViews[i].setVisibility(View.VISIBLE);
+                contentViews[i].setVisibility(View.VISIBLE);
+
+                QrRecord record = records.get(i);
+                imageViews[i].setImageResource(record.getTypeDrawable());
+                dateViews[i].setText(record.getDate());
+                contentViews[i].setText(record.getContent());
+            }
+
+            System.out.println("Выведено:" + counter);
         }
-
-        System.out.println("Выведено:" + counter);
     }
 
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
 
-        if(resultLayout.getVisibility() == View.VISIBLE){
+        if(result.isActive()){
             setResultRepresentation(false);
         }else{
             finish();
@@ -182,35 +147,31 @@ public class HistoryActivity extends Activity {
         @Override
         public void onClick(View v) {
             TextView clickedView = findViewById(v.getId());
-            pickedContent = clickedView.getText().toString();
-            resultView.setText(pickedContent);
-            Uri clickedContent = Uri.parse(clickedView.getText().toString());
-
+            String pickedContent = clickedView.getText().toString();
+            Uri clickedContent = Uri.parse(pickedContent);
             QrTypeDecoder typeDecoder = new QrTypeDecoder(clickedContent);
             typeDecoder.decode();
-            qrType = typeDecoder.getType();
-            specialButton.setText(typeDecoder.getButtonName());
-            specialIntent = typeDecoder.getIntent();
+
+            result.setDecoder(typeDecoder);
 
             setResultRepresentation(true);
         }
     };
 
-    private void setResultRepresentation(Boolean input){
-        if(input == true){
+
+    private void setResultRepresentation(boolean inParam){
+        if(inParam == true){
             for(int i = 0; i < 11; i++){
                 dateViews[i].setEnabled(false);
                 contentViews[i].setEnabled(false);
             }
-
-            resultLayout.setVisibility(View.VISIBLE);
+            result.setVisability(true);
         }else{
             for(int i = 0; i < 11; i++){
                 dateViews[i].setEnabled(true);
                 contentViews[i].setEnabled(true);
             }
-
-            resultLayout.setVisibility(View.INVISIBLE);
+            result.setVisability(false);
         }
     }
 }

@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">TouristHelper</string>
+
+    <string name="get_text_button">Get text</string>
+    <string name="translate_button">Translate</string>
+    <string name="simplify_button">Simplify</string>
+
+    <string name="geo_button">Look in maps</string>
+    <string name="link_button">Open in browser</string>
+    <string name="tel_button">Call to number</string>
+    <string name="text_button">Search in the web</string>
+    <string name="Scan_result">Scan result</string>
+
+    <string-array name="languagelist">
+        <item>EN</item>
+        <item>RU</item>
+    </string-array>
+
+
 </resources>

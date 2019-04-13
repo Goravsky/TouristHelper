@@ -6,23 +6,25 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
-        android:id="@+id/result_fragment"
-        android:layout_width="wrap_content"
+        android:id="@+id/result_fragment_layout"
+        android:layout_width="345dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="bottom|center_horizontal"
         android:orientation="vertical"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.458">
 
         <TextView
             android:id="@+id/qr_content"
-            android:layout_width="336dp"
+            android:layout_width="319dp"
             android:layout_height="wrap_content"
             android:background="@android:color/background_light"
             android:gravity="center"
-            android:text="Scan result"
+            android:text="@string/Scan_result"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +38,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,22 +46,22 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/open_in_browser_button"
-                style="@android:style/ButtonBar"
-                android:layout_width="130dp"
-                android:layout_height="55dp"
+                android:id="@+id/special_button"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="155dp"
+                android:layout_height="65dp"
                 android:layout_weight="1"
-                android:text="Search in web"
+                android:text="@string/text_button"
                 tools:layout_editor_absoluteX="196dp"
                 tools:layout_editor_absoluteY="282dp" />
 
             <Button
-                android:id="@+id/get_qr_result_button"
-                style="@android:style/ButtonBar"
-                android:layout_width="130dp"
-                android:layout_height="55dp"
+                android:id="@+id/get_text_button"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="155dp"
+                android:layout_height="65dp"
                 android:layout_weight="1"
-                android:text="Get text"
+                android:text="@string/get_text_button"
                 tools:layout_editor_absoluteX="48dp"
                 tools:layout_editor_absoluteY="282dp" />
         </LinearLayout>

@@ -5,593 +5,551 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-        android:id="@+id/history_result_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/cast_expanded_controller_ad_label_background_color"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/history_result_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:gravity="center"
-            android:text="Scan result"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="220dp" />
-
-        <LinearLayout
-            style="@android:style/ButtonBar"
+        <TableLayout
+            android:id="@+id/history_table_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
+            android:gravity="top|center_horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <Button
-                android:id="@+id/history_get_result_button"
-                style="@android:style/ButtonBar"
-                android:layout_width="130dp"
-                android:layout_height="55dp"
-                android:layout_weight="1"
-                android:text="Get text"
-                tools:layout_editor_absoluteX="48dp"
-                tools:layout_editor_absoluteY="282dp" />
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
 
-            <Button
-                android:id="@+id/history_open_in_browser_button"
-                style="@android:style/ButtonBar"
-                android:layout_width="130dp"
-                android:layout_height="55dp"
-                android:layout_weight="1"
-                android:text="Search in web"
-                tools:layout_editor_absoluteX="196dp"
-                tools:layout_editor_absoluteY="282dp" />
-        </LinearLayout>
-    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/default_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="There is no QR's scaned yet"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/image_view0"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/ic_dialog_close_light" />
 
-    <TableLayout
-        android:id="@+id/history_table_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="top|center_horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+                    <TextView
+                        android:id="@+id/date_field0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="21.12.2018"
+                        android:textSize="17sp"
+                        android:visibility="invisible" />
 
-        <TableRow
+                    <TextView
+                        android:id="@+id/content_field0"
+                        android:layout_width="255dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="TextView"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/image_view1"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/ic_dialog_close_light" />
+
+                    <TextView
+                        android:id="@+id/date_field1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="21.12.2018"
+                        android:textSize="17sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/content_field1"
+                        android:layout_width="255dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="TextView"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/image_view2"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/ic_dialog_close_light" />
+
+                    <TextView
+                        android:id="@+id/date_field2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="21.12.2018"
+                        android:textSize="17sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/content_field2"
+                        android:layout_width="255dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="TextView"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/image_view3"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/ic_dialog_close_light" />
+
+                    <TextView
+                        android:id="@+id/date_field3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="21.12.2018"
+                        android:textSize="17sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/content_field3"
+                        android:layout_width="255dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="TextView"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/image_view4"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/ic_dialog_close_light" />
+
+                    <TextView
+                        android:id="@+id/date_field4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="21.12.2018"
+                        android:textSize="17sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/content_field4"
+                        android:layout_width="255dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="TextView"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/image_view5"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/ic_dialog_close_light" />
+
+                    <TextView
+                        android:id="@+id/date_field5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="21.12.2018"
+                        android:textSize="17sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/content_field5"
+                        android:layout_width="255dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="TextView"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/image_view6"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/ic_dialog_close_light" />
+
+                    <TextView
+                        android:id="@+id/date_field6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="21.12.2018"
+                        android:textSize="17sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/content_field6"
+                        android:layout_width="255dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="TextView"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/image_view7"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/ic_dialog_close_light" />
+
+                    <TextView
+                        android:id="@+id/date_field7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="21.12.2018"
+                        android:textSize="17sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/content_field7"
+                        android:layout_width="255dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="TextView"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/image_view8"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/ic_dialog_close_light" />
+
+                    <TextView
+                        android:id="@+id/date_field8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="21.12.2018"
+                        android:textSize="17sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/content_field8"
+                        android:layout_width="255dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="TextView"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/image_view9"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/ic_dialog_close_light" />
+
+                    <TextView
+                        android:id="@+id/date_field9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="21.12.2018"
+                        android:textSize="17sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/content_field9"
+                        android:layout_width="255dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="TextView"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/image_view10"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/ic_dialog_close_light" />
+
+                    <TextView
+                        android:id="@+id/date_field10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="21.12.2018"
+                        android:textSize="17sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/content_field10"
+                        android:layout_width="255dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="TextView"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+        <fragment
+            android:id="@+id/history_result_fragment"
+            android:name="com.Goravsky.touristhelper.ui.ResultFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout="@layout/fragment_result" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/image_view0"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/ic_dialog_close_light" />
-
-                <TextView
-                    android:id="@+id/date_field0"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="21.12.2018"
-                    android:textSize="17sp"
-                    android:visibility="invisible" />
-
-                <TextView
-                    android:id="@+id/content_field0"
-                    android:layout_width="255dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="TextView"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
+        <TextView
+            android:id="@+id/default_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/image_view1"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/ic_dialog_close_light" />
-
-                <TextView
-                    android:id="@+id/date_field1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="21.12.2018"
-                    android:textSize="17sp"
-                    android:visibility="invisible" />
-
-                <TextView
-                    android:id="@+id/content_field1"
-                    android:layout_width="255dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="TextView"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/image_view2"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/ic_dialog_close_light" />
-
-                <TextView
-                    android:id="@+id/date_field2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="21.12.2018"
-                    android:textSize="17sp"
-                    android:visibility="invisible" />
-
-                <TextView
-                    android:id="@+id/content_field2"
-                    android:layout_width="255dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="TextView"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/image_view3"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/ic_dialog_close_light" />
-
-                <TextView
-                    android:id="@+id/date_field3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="21.12.2018"
-                    android:textSize="17sp"
-                    android:visibility="invisible" />
-
-                <TextView
-                    android:id="@+id/content_field3"
-                    android:layout_width="255dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="TextView"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/image_view4"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/ic_dialog_close_light" />
-
-                <TextView
-                    android:id="@+id/date_field4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="21.12.2018"
-                    android:textSize="17sp"
-                    android:visibility="invisible" />
-
-                <TextView
-                    android:id="@+id/content_field4"
-                    android:layout_width="255dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="TextView"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/image_view5"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/ic_dialog_close_light" />
-
-                <TextView
-                    android:id="@+id/date_field5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="21.12.2018"
-                    android:textSize="17sp"
-                    android:visibility="invisible" />
-
-                <TextView
-                    android:id="@+id/content_field5"
-                    android:layout_width="255dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="TextView"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/image_view6"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/ic_dialog_close_light" />
-
-                <TextView
-                    android:id="@+id/date_field6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="21.12.2018"
-                    android:textSize="17sp"
-                    android:visibility="invisible" />
-
-                <TextView
-                    android:id="@+id/content_field6"
-                    android:layout_width="255dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="TextView"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/image_view7"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/ic_dialog_close_light" />
-
-                <TextView
-                    android:id="@+id/date_field7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="21.12.2018"
-                    android:textSize="17sp"
-                    android:visibility="invisible" />
-
-                <TextView
-                    android:id="@+id/content_field7"
-                    android:layout_width="255dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="TextView"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/image_view8"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/ic_dialog_close_light" />
-
-                <TextView
-                    android:id="@+id/date_field8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="21.12.2018"
-                    android:textSize="17sp"
-                    android:visibility="invisible" />
-
-                <TextView
-                    android:id="@+id/content_field8"
-                    android:layout_width="255dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="TextView"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/image_view9"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/ic_dialog_close_light" />
-
-                <TextView
-                    android:id="@+id/date_field9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="21.12.2018"
-                    android:textSize="17sp"
-                    android:visibility="invisible" />
-
-                <TextView
-                    android:id="@+id/content_field9"
-                    android:layout_width="255dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="TextView"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/image_view10"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:visibility="invisible"
-                    app:srcCompat="@drawable/ic_dialog_close_light" />
-
-                <TextView
-                    android:id="@+id/date_field10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="21.12.2018"
-                    android:textSize="17sp"
-                    android:visibility="invisible" />
-
-                <TextView
-                    android:id="@+id/content_field10"
-                    android:layout_width="255dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="TextView"
-                    android:visibility="invisible" />
-
-            </LinearLayout>
-        </TableRow>
-    </TableLayout>
+            android:layout_gravity="center"
+            android:text="There is no QR's scaned yet"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>

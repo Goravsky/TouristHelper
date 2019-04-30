@@ -30,7 +30,7 @@
                 android:background="#00ffffff"
                 android:foreground="@drawable/flashlight1"
                 app:layout_constraintEnd_toStartOf="@+id/history_button"
-                tools:layout_editor_absoluteY="0dp" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/history_button"
@@ -46,7 +46,7 @@
 
         <fragment
             android:id="@+id/scanner_result_fragment"
-            android:name="com.Goravsky.touristhelper.ui.ResultFragment"
+            android:name="ru.textanalysis.touristhelper.ui.ResultFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

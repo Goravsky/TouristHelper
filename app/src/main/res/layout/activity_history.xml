@@ -528,7 +528,7 @@
 
         <fragment
             android:id="@+id/history_result_fragment"
-            android:name="com.Goravsky.touristhelper.ui.ResultFragment"
+            android:name="ru.textanalysis.touristhelper.ui.ResultFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

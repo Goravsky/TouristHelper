@@ -12,8 +12,8 @@
     <string name="Scan_result">Scan result</string>
 
     <string-array name="languagelist">
-        <item>EN</item>
         <item>RU</item>
+        <item>EN</item>
     </string-array>
 
 

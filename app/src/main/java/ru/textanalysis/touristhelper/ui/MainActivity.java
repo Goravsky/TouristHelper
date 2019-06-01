@@ -2,7 +2,6 @@ package ru.textanalysis.touristhelper.ui;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements BarcodeRetriever 
     private BarcodeCapture barcodeCapture;
     private ImageButton historyButton;
     private ImageButton flashButton;
+    private ImageButton helpButton;
     private Uri qrUri;
     private QrHistory qrHistory;
     private ResultFragment result;
@@ -49,8 +49,11 @@ public class MainActivity extends AppCompatActivity implements BarcodeRetriever 
 
         historyButton = findViewById(R.id.history_button);
         flashButton = findViewById(R.id.flash_button);
+        helpButton = findViewById(R.id.help_button);
+
         result = (ResultFragment) getFragmentManager().findFragmentById(R.id.scanner_result_fragment);
         qrHistory = new QrHistory(MainActivity.this, null, 1);
+
         historyButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -63,6 +66,13 @@ public class MainActivity extends AppCompatActivity implements BarcodeRetriever 
             public void onClick(View v) {
                 barcodeCapture.setShowFlash(!barcodeCapture.isShowFlash());
                 barcodeCapture.refresh();
+            }
+        });
+        helpButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent helpIntent = new Intent (MainActivity.this, HelpActivity.class);
+                startActivity(helpIntent);
             }
         });
     }

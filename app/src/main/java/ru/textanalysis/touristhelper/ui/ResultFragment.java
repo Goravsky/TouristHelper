@@ -46,11 +46,9 @@ public class ResultFragment extends Fragment {
 
     public void setVisability(boolean inParam){
         if (inParam == true) {
-            System.out.println("VISIBLE");
             resultLayout.setVisibility(View.VISIBLE);
             resultLayout.bringToFront();
         }else {
-            System.out.println("INVISIBLE");
             resultLayout.setVisibility(View.INVISIBLE);
         }
     }
@@ -67,7 +65,6 @@ public class ResultFragment extends Fragment {
         typeDecoder = decoder;
 
         qrContentView.setText(typeDecoder.getContent());
-        System.out.println(typeDecoder.getType());
         switch (typeDecoder.getType()){
             case "link":
                 specialButton.setText(R.string.link_button);

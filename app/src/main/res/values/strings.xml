@@ -10,11 +10,80 @@
     <string name="tel_button">Call to number</string>
     <string name="text_button">Search in the web</string>
     <string name="Scan_result">Scan result</string>
+    <string name="about_button">About</string>
+    <string name="guide_button">Guide</string>
 
     <string-array name="languagelist">
         <item>RU</item>
         <item>EN</item>
     </string-array>
 
+    <string name="history_def">
+        There is no QR-codes scanned yet
+    </string>
 
+    <string name="version">
+        version 2.0.4
+    </string>
+
+    <string name="about_app1">
+        Toursit Helper - is an application for quick access to information from sources encoded in QR codes.
+    </string>
+    <string name="about_app2">
+        This app will allow you to scan QR codes and get quick access to the text information encoded in them,
+        and also to process the received text information - translation and simplification.
+    </string>
+
+
+    <string name="api_text">
+        Used API:
+    </string>
+
+    <string-array name="api_list">
+        <item>Сервис автоматического реферирования текста</item>
+        <item>Yandex Translate</item>
+        <item>Resoomer Text Summarizer</item>
+        <item>Cortical Extract Keywords</item>
+    </string-array>
+
+    <string-array name="url_list">
+        <item>http://abstracts.textanalysis.ru/ </item>
+        <item>http://translate.yandex.com/</item>
+        <item>https://resoomer.com/</item>
+        <item>https://www.cortical.io/extract-keywords.html</item>
+    </string-array>
+
+    <string name="contacts">
+        Contact:  beaverpul.supp@gmail.com
+    </string>
+
+    <string name="instruction" formatted="false"><![CDATA[
+        <h3><font color="black">1. Scanning</font></h3>
+        <p style="color:black">To scan a new QR code, place it in the camera area
+            and when the new code is highlighted with a graphic, click on it</p>
+        <img src="instruction_scan"></img>
+        <br/>
+
+       <h3><font color="black">2. Choose next action </font></h3>
+        <p style="color:black">Choose what to do next: process the content according
+            to the type or extract the text</p>
+        <br/>
+        <img src="instruction_choose"></img>
+        <br/>
+
+        <h3><font color="black">3. Text processing</font></h3>
+        <p style="color:black">if you choose to extract text, a new window will display the source address and the extracted text,
+            and you can select the language mode from the drop-down list</p>
+        <br/>
+        <img src="instruction_lang" style=" border: 8px solid #ffffff;"></img>
+        <br/>
+        <p style="color:black">After selecting a language, you can translate the text or simplify it</p>
+        <br/>
+        <img src="instruction_text"></img>
+        <br/>
+
+        <h3><font color="black">4. History </font></h3>
+        <p style="color:black"> <img src="book1" style="float:top"/> - scan history</p>
+        <p style="color:black"><img src="flashligt2" style="float:top"/> - device's flashlight</p>
+    ]]></string>
 </resources>

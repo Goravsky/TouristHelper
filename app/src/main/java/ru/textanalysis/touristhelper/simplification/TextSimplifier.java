@@ -7,7 +7,6 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
-import android.widget.Toast;
 
 import ru.textanalysis.touristhelper.GetTextListener;
 import ru.textanalysis.touristhelper.translation.Translator;

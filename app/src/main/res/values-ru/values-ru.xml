@@ -10,5 +10,62 @@
     <string name="link_button">Открыть в браузере</string>
     <string name="tel_button">Позвонить по номеру</string>
     <string name="text_button">Найти в интернете</string>
-    <string name="Scan_result">Scan result</string>
+    <string name="Scan_result">Результаты сканирования</string>
+    <string name="about_button">О приложении</string>
+    <string name="guide_button">Руководство</string>
+
+    <string name="history_def">
+        Еще нет отсканированных QR-кодов
+    </string>
+
+    <string name="version">
+        версия 2.0.4
+    </string>
+
+    <string name="about_app1">
+        Toursit Helper - приложение для быстрого доступа к информации из источников, закодированных в QR-кодах.
+    </string>
+
+    <string name="about_app2">
+        Это приложение позволит вам сканировать QR-коды и получать быстрый доступ к закодированной в них текстовой информации,
+        а также выполнять её обработку - перевод и упрощение.
+    </string>
+
+    <string name="api_text">
+        Используемые API:
+    </string>
+
+    <string name="contacts">
+        Контакты:  beaverpul.supp@gmail.com
+    </string>
+
+    <string name="instruction"><![CDATA[
+        <br/>
+        <h3><font color="black">1. Сканирование</font></h3>
+        <p style="color:black">Чтобы отсканировать новый QR-код поместите его в область камеры</p>
+        <img src="instruction_scan"></img>
+        <br/>
+
+        <h3><font color="black">2. Выбор дальнейшего действия</font></h3>
+        <p style="color:black">Выберете дальнейшее действие: обработать содержимое в соответствии с типом
+        или извлечь текст из источника</p>
+        <br/>
+        <img src="instruction_choose"></img>
+        <br/>
+
+        <h3><font color="black">3. Обработка текста</font></h3>
+        <p style="color:black">Если вы выбрали вариант извлечения текста, в новом окне будет отображен адрес источника и извлеченный текст,
+        вы можете выбрать языковой режим работы из выпадающего списка</p>
+        <br/>
+        <img src="instruction_lang"></img>
+        <br/>
+        <p style="color:black">После выбора языка вы можете перевести текст либо упростить его</p>
+        <br/>
+        <img src="instruction_text"></img>
+        <br/>
+
+        <h3><font color="black">4. История и фонарик</font></h3>
+        <p style="color:black"> <img src="book1" class="fig"/> -  история сканирований</p>
+        <p style="color:black"><img src="flashligt2" class="fig"/> - включение фонарика устройства</p>
+    ]]></string>
 </resources>
